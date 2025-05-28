@@ -1,61 +1,131 @@
-body {
+* {
  margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
  font-family: 'Segoe UI', sans-serif;
- background-color: #0b0b0d;
- color: #f0f0f0;
+ color: #fff;
+ background-color: #0a0a0f;
  line-height: 1.6;
+ position: relative;
+}
+.background-overlay {
+ background: linear-gradient(to bottom, #090c20ee, #06070e),
+             url('https://images.unsplash.com/photo-1600047504954-04d376b3d04c?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+ position: fixed;
+ top: 0; left: 0;
+ width: 100%; height: 100%;
+ z-index: -1;
 }
 .container {
- max-width: 900px;
+ max-width: 800px;
  margin: 0 auto;
  padding: 2rem;
 }
-h1, h2, h3 {
- color: #00ccff;
-}
 .hero {
  text-align: center;
- margin-bottom: 2rem;
+ padding-top: 5rem;
+ padding-bottom: 3rem;
 }
-.hero img {
- width: 100%;
- max-width: 400px;
- border-radius: 10px;
- box-shadow: 0 0 20px #00ccff33;
+.subtitle {
+ font-size: 1.2rem;
+ margin: 1rem 0;
+ color: #b6b6ff;
 }
-.price {
- font-size: 2rem;
- color: #00ff88;
+
+.e-book {
+    width: 300px;
+}
+
+.price-container {
+ font-size: 1.4rem;
+ margin: 1.5rem 0;
+}
+.original-price {
+ text-decoration: line-through;
+ color: #aaa;
+ margin-right: 1rem;
+}
+.promo-price {
+ color: #00ffc8;
+ font-weight: bold;
 }
 .countdown {
  font-size: 1.5rem;
- color: #ff4444;
  margin-bottom: 2rem;
+ color: #ff7575;
 }
-.btn {
- display: inline-block;
- background: #00ccff;
- color: #000;
+.cta-button {
  padding: 1rem 2rem;
- border-radius: 8px;
  font-size: 1.2rem;
+ background: #1f1fff;
+ color: white;
  text-decoration: none;
+ border-radius: 8px;
  transition: background 0.3s ease;
 }
-.btn:hover {
- background: #0099cc;
+.cta-button:hover {
+ background: #3f3fff;
 }
-.section {
+.content, .testimonials {
+ background: rgba(20, 20, 40, 0.7);
+ border-radius: 12px;
+ margin: 2rem auto;
+ padding: 2rem;
+}
+h2 {
+ text-align: center;
+ margin-bottom: 1rem;
+}
+ul {
+ list-style: none;
+ padding: 0;
+}
+ul li {
+ margin: 1rem 0;
+ font-size: 1.1rem;
+}
+blockquote {
+ font-style: italic;
+ margin: 1.5rem 0;
+ background: #1a1a2f;
+ padding: 1rem;
+ border-left: 4px solid #00ffc8;
+}
+footer {
+ text-align: center;
+ padding: 2rem;
+ font-size: 0.9rem;
+ background-color: #0c0c15;
  margin-top: 2rem;
 }
-.highlight {
- background-color: #1a1a1a;
- padding: 1rem;
- border-left: 4px solid #00ccff;
- border-radius: 5px;
-}
-@media (max-width: 600px) {
- .price { font-size: 1.6rem; }
- .countdown { font-size: 1.2rem; }
- .btn { width: 100%; text-align: center; }
+
+@media (max-width: 768px) {
+ .container {
+   padding: 1.5rem;
+ }
+ .hero {
+   padding-top: 4rem;
+   padding-bottom: 2rem;
+ }
+ .subtitle {
+   font-size: 1rem;
+ }
+ .price-container {
+   font-size: 1.2rem;
+ }
+ .cta-button {
+   width: 100%;
+   font-size: 1.1rem;
+ }
+ .countdown {
+   font-size: 1.3rem;
+ }
+ ul li {
+   font-size: 1rem;
+ }
+ blockquote {
+   font-size: 0.95rem;
+ }
 }

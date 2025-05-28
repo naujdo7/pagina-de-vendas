@@ -1,20 +1,30 @@
-function countdownTimer() {
- const endTime = new Date();
- endTime.setHours(endTime.getHours() + 6); // 6 horas a partir do carregamento da página
- function updateTimer() {
-   const now = new Date();
-   const distance = endTime - now;
-   if (distance <= 0) {
-     document.getElementById("timer").innerHTML = "Oferta expirada!";
-     return;
-   }
-   const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-   const minutes = Math.floor((distance / (1000 * 60)) % 60);
-   const seconds = Math.floor((distance / 1000) % 60);
-   document.getElementById("timer").innerHTML =
-     `${hours}h ${minutes}m ${seconds}s`;
- }
- updateTimer();
- setInterval(updateTimer, 1000);
+const countdown = document.getElementById("countdown");
+
+function startCountdown(durationInMinutes) {
+
+  let time = durationInMinutes * 60;
+
+  const timer = setInterval(() => {
+
+    const minutes = Math.floor(time / 60);
+
+    const seconds = time % 60;
+
+    countdown.textContent = `Promoção acaba em: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    time--;
+
+    if (time < 0) {
+
+      clearInterval(timer);
+
+      countdown.textContent = "Promoção encerrada!";
+
+    }
+
+  }, 1000);
+
 }
-countdownTimer();
+
+startCountdown(15); // 15 minutos de contagem regressiva
+ 
